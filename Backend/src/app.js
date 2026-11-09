@@ -9,8 +9,8 @@ app.use(cookieParser())
 app.use(cors({
     origin: [
         "http://localhost:5173",
-        "http://careerlensai-ruby.vercel.app"
-    ].filter(Boolean),
+        "https://careerlensai-ruby.vercel.app"
+    ],
     credentials: true
 }))
 
