@@ -477,3 +477,159 @@ $severity-low: #3fb950;
         border-color: rgba($severity-low, 0.25);
     }
 }
+
+// ══════════════════════════════════════════════════════════════════════════════
+// ── Mobile Responsive ─────────────────────────────────────────────────────────
+// ══════════════════════════════════════════════════════════════════════════════
+
+@media (max-width: 900px) {
+
+    .interview-page {
+        padding: 0;
+        min-height: 100vh;
+    }
+
+    .interview-layout {
+        flex-direction: column;
+        border-radius: 0;
+        border: none;
+    }
+
+    .interview-divider {
+        width: 100%;
+        height: 1px;
+    }
+
+    // Nav becomes horizontal scrollable tabs
+    .interview-nav {
+        width: 100%;
+        padding: 1rem;
+        gap: 0.75rem;
+        flex-direction: column;
+
+        .nav-content {
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        &__label {
+            margin-bottom: 0;
+            padding: 0;
+        }
+
+        &__item {
+            white-space: nowrap;
+            padding: 0.5rem 0.75rem;
+            font-size: 0.8rem;
+            border: 1px solid $border-color;
+            border-radius: 2rem;
+            flex-shrink: 0;
+        }
+
+        .button.primary-button {
+            width: 100%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    // Content area
+    .interview-content {
+        padding: 1.25rem 1rem;
+        max-height: none;
+        overflow-y: visible;
+        padding-bottom: 1rem;
+    }
+
+    .content-header {
+        margin-bottom: 1rem;
+        padding-bottom: 0.75rem;
+
+        h2 {
+            font-size: 1rem;
+        }
+    }
+
+    // Right sidebar becomes horizontal section below content
+    .interview-sidebar {
+        width: 100%;
+        padding: 1.25rem 1rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .sidebar-divider {
+        display: none;
+    }
+
+    .match-score {
+        flex: 1;
+        min-width: 140px;
+        align-items: center;
+
+        &__ring {
+            width: 80px;
+            height: 80px;
+        }
+
+        &__value {
+            font-size: 1.4rem;
+        }
+    }
+
+    .skill-gaps {
+        flex: 2;
+        min-width: 200px;
+    }
+
+    // Roadmap timeline
+    .roadmap-list::before {
+        left: 20px;
+    }
+
+    .roadmap-day {
+        padding-left: 2.75rem;
+
+        &::before {
+            left: 14px;
+            width: 12px;
+            height: 12px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+
+    .interview-sidebar {
+        flex-direction: column;
+    }
+
+    .match-score {
+        flex-direction: row;
+        gap: 1rem;
+
+        &__ring {
+            width: 70px;
+            height: 70px;
+        }
+    }
+
+    .q-card {
+        &__header {
+            padding: 0.75rem;
+        }
+
+        &__body {
+            padding: 0 0.75rem 0.75rem;
+        }
+
+        &__question {
+            font-size: 0.835rem;
+        }
+    }
+}
