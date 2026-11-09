@@ -500,7 +500,7 @@ $severity-low: #3fb950;
         height: 1px;
     }
 
-    // Nav becomes horizontal scrollable tabs
+    // Nav becomes horizontal wrapped tabs
     .interview-nav {
         width: 100%;
         padding: 1rem;
@@ -510,8 +510,7 @@ $severity-low: #3fb950;
         .nav-content {
             display: flex;
             gap: 0.5rem;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
+            flex-wrap: wrap;
         }
 
         &__label {
@@ -526,6 +525,9 @@ $severity-low: #3fb950;
             border: 1px solid $border-color;
             border-radius: 2rem;
             flex-shrink: 0;
+            flex: 1;
+            justify-content: center;
+            min-width: fit-content;
         }
 
         .button.primary-button {
